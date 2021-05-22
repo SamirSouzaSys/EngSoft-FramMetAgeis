@@ -12,6 +12,7 @@
     <link href="assets/fonts/css/all.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/global.css" rel="stylesheet">
 
     <!-- Favicons -->
     <!-- <link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -23,32 +24,7 @@
 <!--    <meta name="theme-color" content="#7952b3"> -->
 
     <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      body {
-        background-image: linear-gradient(180deg, #eee, #fff 100px, #fff);
-      }
-
-      .container {
-        max-width: 960px;
-      }
-
-      .pricing-header {
-        max-width: 700px;
-      }
-
+      
     </style>
 
     <!-- Custom styles for this template -->
@@ -88,7 +64,7 @@
     <footer class="pt-4 my-md-5 pt-md-5 border-top">
       <div class="row">
         <div class="col-12 col-md">
-          <img class="mb-2" src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="24" height="19">
+          <img class="mb-2" src="assets/brand/bootstrap-logo.svg" alt="" width="24" height="19">
           <small class="d-block mb-3 text-muted">&copy; 2021</small>
         </div>
         <div class="col-6 col-md">

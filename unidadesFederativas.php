@@ -13,6 +13,7 @@
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/fonts/css/all.css" rel="stylesheet">
+    <link href="assets/css/global.css" rel="stylesheet">
 
     <!-- Favicons -->
     <!-- <link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -22,35 +23,6 @@
     <link rel="mask-icon" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
     <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico"> -->
 <!--    <meta name="theme-color" content="#7952b3"> -->
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      body {
-        background-image: linear-gradient(180deg, #eee, #fff 100px, #fff);
-      }
-
-      .container {
-        max-width: 960px;
-      }
-
-      .pricing-header {
-        max-width: 700px;
-      }
-
-    </style>
 
     <!-- Custom styles for this template -->
   </head>
@@ -91,7 +63,7 @@
             <th scope="col">Sigla</th>
             <th scope="col">Nome</th>
             <th scope="col">
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAddForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAddUF">
                 <i class="fas fa-plus-circle"></i>
               </button>
             </th>
@@ -102,10 +74,10 @@
             <th scope="row">AC</th>
             <td>Acre</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -114,10 +86,10 @@
             <th scope="row">AL</th>
             <td>Alagoas</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -126,10 +98,10 @@
             <th scope="row">AP</th>
             <td>Amapá</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -138,10 +110,10 @@
             <th scope="row">AM</th>
             <td>Amazonas</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -150,10 +122,10 @@
             <th scope="row">BA</th>
             <td>Bahia</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -162,10 +134,10 @@
             <th scope="row">CE</th>
             <td>Ceará</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -174,10 +146,10 @@
             <th scope="row">DF</th>
             <td>Distrito Federal</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -186,10 +158,10 @@
             <th scope="row">ES</th>
             <td>Espírito Santo</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -198,10 +170,10 @@
             <th scope="row">GO</th>
             <td>Goiás</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -210,10 +182,10 @@
             <th scope="row">MA</th>
             <td>Maranhão</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -222,10 +194,10 @@
             <th scope="row">MT</th>
             <td>Mato Grosso</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -234,10 +206,10 @@
             <th scope="row">MS</th>
             <td>Mato Grosso do Sul</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -246,10 +218,10 @@
             <th scope="row">MG</th>
             <td>Minas Gerais</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -258,10 +230,10 @@
             <th scope="row">PA</th>
             <td>Pará</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -270,10 +242,10 @@
             <th scope="row">PB</th>
             <td>Paraíba</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -282,10 +254,10 @@
             <th scope="row">PR</th>
             <td>Paraná</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -294,10 +266,10 @@
             <th scope="row">PE</th>
             <td>Pernambuco</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -306,10 +278,10 @@
             <th scope="row">PI</th>
             <td>Piauí</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -318,10 +290,10 @@
             <th scope="row">RJ</th>
             <td>Rio de Janeiro</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -330,10 +302,10 @@
             <th scope="row">RN</th>
             <td>Rio Grande do Norte</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -342,10 +314,10 @@
             <th scope="row">RS</th>
             <td>Rio Grande do Sul</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -354,10 +326,10 @@
             <th scope="row">RO</th>
             <td>Rondônia</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -366,10 +338,10 @@
             <th scope="row">RR</th>
             <td>Roraima</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -378,10 +350,10 @@
             <th scope="row">SC</th>
             <td>Santa Catarina</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -390,10 +362,10 @@
             <th scope="row">SP</th>
             <td>São Paulo</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -402,10 +374,10 @@
             <th scope="row">SE</th>
             <td>Sergipe</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -414,10 +386,10 @@
             <th scope="row">TO</th>
             <td>Tocantins</td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                 <i class="fas fa-pen-square me-1"></i>
               </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteForm">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
                 <i class="fas fa-times-circle"></i>
               </button>  
             </td>
@@ -445,22 +417,22 @@
   </div>
 
   <!-- Modal Add Form-->
-  <div class="modal fade" id="modalAddForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalAddFormLabel" aria-hidden="true">
+  <div class="modal fade" id="modalAddUF" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalAddFormLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="staticBackdropLabel">Adicionar Unidades Federativas</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form>
+        <form id="modalAddUFForm">
         <div class="modal-body">
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Sigla da Unidade Federativa</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <label for="siglaUFAdd" class="form-label">Sigla da Unidade Federativa</label>
+              <input type="text" maxlength="2" class="form-control" id="siglaUFAdd" requiredData="requiredData">
             </div>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Nome da Unidade Federativa</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <label for="nomeUFAdd" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="nomeUFAdd" requiredData="requiredData">
             </div>
           </div>
           <div class="modal-footer">
@@ -472,22 +444,22 @@
   </div>
   
   <!-- Modal Edit Form-->
-  <div class="modal fade" id="modalEditForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalEditFormLabel" aria-hidden="true">
+  <div class="modal fade" id="modalEditUF" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalEditUfLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="staticBackdropLabel">Alterar/Modificar os dados da Unidade Federativa</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form>
+        <form id="modalEditUFForm">
         <div class="modal-body">
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Alterar/Modificar a Sigla da Unidade Federativa</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <label for="siglaUFEdit" class="form-label">Alterar/Modificar a Sigla da Unidade Federativa</label>
+              <input type="text" maxlength="2" class="form-control" id="siglaUFEdit" requiredData="requiredData">
             </div>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Alterar/Modificar o Nome da Unidade Federativa</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <label for="nomeUFEdit" class="form-label">Alterar/Modificar o Nome da Unidade Federativa</label>
+              <input type="text" class="form-control" id="nomeUFEdit" requiredData="requiredData">
             </div>
           </div>
           <div class="modal-footer">
@@ -499,7 +471,7 @@
   </div>
 
   <!-- Modal Delete Form-->
-  <div class="modal fade" id="modalDeleteForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalDeleteFormLabel" aria-hidden="true">
+  <div class="modal fade" id="modalDeleteUF" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalDeleteFormLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -513,8 +485,10 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Excluir</button>
-            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
+            <input type="submit" class="btn btn-danger" form="modalDeleteUFForm" value="Excluir">
+            <input type="submit" class="btn btn-primary" form="modalDeleteUFForm" data-bs-dismiss="modal" value="Cancelar">
+            <!-- <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Excluir</button> -->
+            <!-- <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button> -->
           </div>
         </form>
       </div>
