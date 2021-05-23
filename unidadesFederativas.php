@@ -14,6 +14,8 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/fonts/css/all.css" rel="stylesheet">
     <link href="assets/css/global.css" rel="stylesheet">
+    
+    <script src="assets/js/jquery-3.6.0.js"></script>
 
     <!-- Favicons -->
     <!-- <link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -425,18 +427,21 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form id="modalAddUFForm">
-        <div class="modal-body">
+          <div class="modal-body">
             <div class="mb-3">
               <label for="siglaUFAdd" class="form-label">Sigla da Unidade Federativa</label>
+              <label class="d-none validation"> </label>
               <input type="text" maxlength="2" class="form-control" id="siglaUFAdd" requiredData="requiredData">
             </div>
             <div class="mb-3">
               <label for="nomeUFAdd" class="form-label">Nome</label>
+              <label class="d-none validation"> </label>
               <input type="text" class="form-control" id="nomeUFAdd" requiredData="requiredData">
             </div>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Adicionar</button>
+            <button type="submit" class="btn btn-primary">Adicionar</button>
+            <!-- data-bs-dismiss="modal" -->
           </div>
         </form>
       </div>
@@ -452,18 +457,21 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form id="modalEditUFForm">
-        <div class="modal-body">
+          <div class="modal-body">
             <div class="mb-3">
               <label for="siglaUFEdit" class="form-label">Alterar/Modificar a Sigla da Unidade Federativa</label>
+              <label class="d-none validation"> </label>
               <input type="text" maxlength="2" class="form-control" id="siglaUFEdit" requiredData="requiredData">
             </div>
             <div class="mb-3">
               <label for="nomeUFEdit" class="form-label">Alterar/Modificar o Nome da Unidade Federativa</label>
+              <label class="d-none validation"> </label>
               <input type="text" class="form-control" id="nomeUFEdit" requiredData="requiredData">
             </div>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Alterar/Modificar</button>
+            <button type="submit" class="btn btn-primary">Alterar/Modificar</button>
+            <!-- data-bs-dismiss="modal" -->
           </div>
         </form>
       </div>
@@ -496,7 +504,7 @@
   </div>
 
   <script src="assets/js/bootstrap.bundle.js"></script>
-  <script src="assets/js/jquery-3.6.0.js"></script>
+  <script src="assets/js/global.js"></script>
   
   </body>
 </html>

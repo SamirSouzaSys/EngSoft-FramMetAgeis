@@ -2494,23 +2494,28 @@
           <div class="modal-body">
             <div class="mb-3">
               <label for="codigoMun" class="form-label">Código</label>
+              <label class="d-none validation"> </label>
               <input type="number" class="form-control" id="codigoMunAdd" requiredData="requiredData">
-
+              
             </div>
             <div class="mb-3">
-              <label for="nomeMun" class="form-label">Nome</label>
+              <label for="nomeMunAdd" class="form-label">Nome</label>
+              <label class="d-none validation"> </label>
               <input type="text" class="form-control" id="nomeMunAdd" requiredData="requiredData">
             </div>
             <div class="mb-3">
-              <label for="numeroPopMun" class="form-label">Número da população</label>
+              <label for="numeroPopMunAdd" class="form-label">Número da população</label>
+              <label class="d-none validation"> </label>
               <input type="number" class="form-control" id="numeroPopMunAdd">
             </div>
             <div class="mb-3">
-              <label for="nomePrefeitoMun" class="form-label">Nome do Prefeito</label>
+              <label for="nomePrefeitoMunAdd" class="form-label">Nome do Prefeito</label>
+              <label class="d-none validation"> </label>
               <input type="text" class="form-control" id="nomePrefeitoMunAdd">
             </div>
             <div class="mb-3">
-              <label for="siglaUfMun" class="form-label">Sigla da Unidade Federativa</label>
+              <label for="siglaUfMunAdd" class="form-label">Sigla da Unidade Federativa</label>
+              <label class="d-none validation"> </label>
               <input type="text" maxlength="2" class="form-control" id="siglaUfMunAdd" requiredData="requiredData">
             </div>
           </div>
@@ -2536,22 +2541,27 @@
           <div class="modal-body">
             <div class="mb-3">
               <label for="codigoMunEdit" class="form-label">Alterar/Modificar o Código</label>
+              <label class="d-none validation"> </label>
               <input type="number" class="form-control" id="codigoMunEdit" requiredData="requiredData">
             </div>
             <div class="mb-3">
               <label for="nomeMunEdit" class="form-label">Alterar/Modificar o Nome</label>
+              <label class="d-none validation"> </label>
               <input type="text" class="form-control" id="nomeMunEdit" requiredData="requiredData">
             </div>
             <div class="mb-3">
               <label for="numeroPopMunEdit" class="form-label">Alterar/Modificar o Número da população</label>
+              <label class="d-none validation"> </label>
               <input type="number" class="form-control" id="numeroPopMunEdit">
             </div>
             <div class="mb-3">
               <label for="nomePrefeitoMunEdit" class="form-label">Alterar/Modificar o Nome do Prefeito</label>
+              <label class="d-none validation"> </label>
               <input type="text" class="form-control" id="nomePrefeitoMunEdit">
             </div>
             <div class="mb-3">
               <label for="siglaUfMunEdit" class="form-label">Alterar/Modificar a Sigla da Unidade Federativa</label>
+              <label class="d-none validation"> </label>
               <input type="text" maxlength="2" class="form-control" id="siglaUfMunEdit" requiredData="requiredData">
             </div>
             <div class="modal-footer">
