@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MunicipiosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/municipios',[MunicipiosController::class, 'index']);
+// Route::get('/user', [UserController::class, 'index']);
+
+Route::get('/unidadesFederativas', function () {
+    return view('unidadesFederativas');
+    // Route::get('/municipios', function () {
+    //     return view('municipios');
+    // });
+});
+
+//Chamar Função - Exemplo
+// Route::get('/municipios', 'NomeController@MetodoDoController');

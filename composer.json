@@ -1,8 +1,8 @@
 {
-    "name": "laravel/laravel",
+    "name": "laravel/engsoft-frammetageis",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "description": "Disciplina de Engenharia de Software - Metodologia ágeis",
+    "keywords": ["samirsouzasys","claretiano","engenhariaDeSoftware","metodologiaAgeis","framework", "laravel"],
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
