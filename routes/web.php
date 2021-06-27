@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MunicipiosController;
+use App\Http\Controllers\UnidadesFederativasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,18 +16,13 @@ use App\Http\Controllers\MunicipiosController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
-Route::get('/municipios',[MunicipiosController::class, 'index']);
 // Route::get('/user', [UserController::class, 'index']);
+Route::get('/municipios',[MunicipiosController::class, 'index']);
 
-Route::get('/unidadesFederativas', function () {
-    return view('unidadesFederativas');
-    // Route::get('/municipios', function () {
-    //     return view('municipios');
-    // });
-});
+Route::get('/unidadesFederativas',[UnidadesFederativasController::class, 'index']);
 
 //Chamar Função - Exemplo
 // Route::get('/municipios', 'NomeController@MetodoDoController');
