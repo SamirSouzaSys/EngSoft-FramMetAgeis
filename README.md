@@ -70,6 +70,12 @@ php artisan serve
 //Criar Controller - resource
 php artisan make:controller NomeController --resource
 
+//Model Database
+php artisan make:model Models\\ModelBook -m //-m já cria as migrations
+php artisan make:model ModelUnidadeFederativa -m
+
+php artisan migrate
+
 ================================================================================================
 
 *README FROM Laravel*
