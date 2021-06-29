@@ -11,6 +11,15 @@ class ModelMunicipio extends Model
 
     protected $table='municipio';
     protected $primaryKey = 'COD_MUNICIPIO';
+    // public $incrementing = true;
+
+    protected $fillable = [
+        'COD_MUNICIPIO',
+        'NOM_MUNICIPIO',
+        'NUM_POPULACAO',
+        'NOM_PREFEITO',
+        'SGL_UNIDADE_FEDERATIVA'
+    ];
 
 
     public function relUnidadeFederativa(){

@@ -40,7 +40,7 @@ class UnidadesFederativasController extends Controller
      */
     public function create()
     {
-        //
+        // return view('create');
     }
 
     /**
@@ -51,7 +51,14 @@ class UnidadesFederativasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $unidadeFederativa = $this->objUnidadeFederativa->create([
+            'SGL_UNIDADE_FEDERATIVA' => $request->siglaUFAdd,
+            'NOM_UNIDADE_FEDERATIVA' => $request->nomeUFAdd
+        ]);
+
+        if($unidadeFederativa) {
+            return redirect('unidadesFederativas');
+        }
     }
 
     /**

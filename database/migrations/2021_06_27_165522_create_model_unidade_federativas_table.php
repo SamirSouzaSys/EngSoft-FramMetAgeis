@@ -18,6 +18,7 @@ class CreateModelUnidadeFederativasTable extends Migration
             // $table->timestamps();
             $table->string('SGL_UNIDADE_FEDERATIVA',2)->primary();
             $table->string('NOM_UNIDADE_FEDERATIVA',100);
+            $table->timestamps();
 
             // $table->primary('SGL_UNIDADE_FEDERATIVA');
         });

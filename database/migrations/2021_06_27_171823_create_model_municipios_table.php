@@ -14,13 +14,18 @@ class CreateModelMunicipiosTable extends Migration
     public function up()
     {
         Schema::create('municipio', function (Blueprint $table) {
-            $table->integer('COD_MUNICIPIO')->primary();
+            $table->integer('COD_MUNICIPIO')->autoIncrement();
+            // ->primary()
+            // 
             $table->string('NOM_MUNICIPIO',100);
             $table->integer('NUM_POPULACAO')->nullable();
             $table->string('NOM_PREFEITO',100)->nullable();
             $table->string('SGL_UNIDADE_FEDERATIVA',2);
-            $table->foreign('SGL_UNIDADE_FEDERATIVA')->references('SGL_UNIDADE_FEDERATIVA')->on('unidadeFederativa');
+            $table->timestamps();
             
+            // $table->increments('COD_MUNICIPIO')->change();
+
+            $table->foreign('SGL_UNIDADE_FEDERATIVA')->references('SGL_UNIDADE_FEDERATIVA')->on('unidadeFederativa');
         });
     }
 

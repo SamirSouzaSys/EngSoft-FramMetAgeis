@@ -33,8 +33,13 @@ class MunicipiosController extends Controller
         
         // $municipios = $this->objMunicipio->all()->sortBy('NUM_POPULACAO');
         // $municipios = $this->objMunicipio->all()->sortByDesc('NUM_POPULACAO');
+
+        $unidadesFederativas = $this->objUnidadeFederativa->all();
+
         $municipios = $this->objMunicipio->all()->take(30);
-        return view('municipios', compact('municipios'));
+        return view('municipios', compact('municipios','unidadesFederativas'));
+
+
     }
 
     /**
@@ -44,7 +49,7 @@ class MunicipiosController extends Controller
      */
     public function create()
     {
-        //
+        // return view('create');
     }
 
     /**
@@ -55,7 +60,17 @@ class MunicipiosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $mun = $this->objMunicipio->create([
+            // 'COD_MUNICIPIO'          => $request->codigoMunAdd,
+            'NOM_MUNICIPIO'          => $request->nomeMunAdd,
+            'NUM_POPULACAO'          => $request->numeroPopMunAdd,
+            'NOM_PREFEITO'           => $request->nomePrefeitoMunAdd,
+            'SGL_UNIDADE_FEDERATIVA' => $request->siglaUfMunAdd
+        ]);
+
+        if($mun) {
+            return redirect('municipios');
+        }
     }
 
     /**

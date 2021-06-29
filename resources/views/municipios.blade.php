@@ -75,33 +75,46 @@
           <h5 class="modal-title" id="staticBackdropLabel">Adicionar Municípios</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form id="modalAddMunForm" >
+        <form id="modalAddMunForm" name="modalAddMunForm" method="post"
+            action="{{ url('municipios') }}">
+            @csrf
           <div class="modal-body">
-            <div class="mb-3">
+            {{-- <div class="mb-3">
               <label for="codigoMun" class="form-label">Código</label>
               <label class="d-none validation"> </label>
-              <input type="number" class="form-control" id="codigoMunAdd" requiredData="requiredData">
-              
-            </div>
+              <input type="number" class="form-control" id="codigoMunAdd" name="codigoMunAdd" requiredData="requiredData">
+            </div> --}}
+
             <div class="mb-3">
               <label for="nomeMunAdd" class="form-label">Nome</label>
               <label class="d-none validation"> </label>
-              <input type="text" class="form-control" id="nomeMunAdd" requiredData="requiredData">
+              <input type="text" class="form-control" id="nomeMunAdd" name="nomeMunAdd" requiredData="requiredData">
             </div>
             <div class="mb-3">
               <label for="numeroPopMunAdd" class="form-label">Número da população</label>
               <label class="d-none validation"> </label>
-              <input type="number" class="form-control" id="numeroPopMunAdd">
+              <input type="number" class="form-control" id="numeroPopMunAdd" name="numeroPopMunAdd">
             </div>
             <div class="mb-3">
               <label for="nomePrefeitoMunAdd" class="form-label">Nome do Prefeito</label>
               <label class="d-none validation"> </label>
-              <input type="text" class="form-control" id="nomePrefeitoMunAdd">
+              <input type="text" class="form-control" id="nomePrefeitoMunAdd" name="nomePrefeitoMunAdd">
             </div>
             <div class="mb-3">
               <label for="siglaUfMunAdd" class="form-label">Sigla da Unidade Federativa</label>
               <label class="d-none validation"> </label>
-              <input type="text" maxlength="2" class="form-control" id="siglaUfMunAdd" requiredData="requiredData">
+
+              <select class="form-select" aria-label="Default select example"
+              id="siglaUfMunAdd" name="siglaUfMunAdd">
+                @foreach ($unidadesFederativas as $unidadeFederativa)
+                    <option value="{{ $unidadeFederativa->SGL_UNIDADE_FEDERATIVA}}">
+                        {{ $unidadeFederativa->NOM_UNIDADE_FEDERATIVA }} -
+                        {{ $unidadeFederativa->SGL_UNIDADE_FEDERATIVA }}</option>
+                @endforeach
+              </select>
+
+
+              {{-- <input type="text" maxlength="2" class="form-control" id="siglaUfMunAdd" name="siglaUfMunAdd" requiredData="requiredData"> --}}
             </div>
           </div>
           <div class="modal-footer">

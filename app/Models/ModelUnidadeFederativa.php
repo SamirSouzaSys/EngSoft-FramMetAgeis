@@ -14,6 +14,11 @@ class ModelUnidadeFederativa extends Model
     public $incrementing = false;
     protected $keyType = 'string';
 
+    protected $fillable = [
+        'SGL_UNIDADE_FEDERATIVA',
+        'NOM_UNIDADE_FEDERATIVA'
+    ];
+
     public function relMunicipios(){
         return $this->hasMany('App\Models\ModelMunicipio','SGL_UNIDADE_FEDERATIVA');
         // return $this->hasMany('App\Models\ModelMunicipio','SGL_UNIDADE_FEDERATIVA','SGL_UNIDADE_FEDERATIVA');

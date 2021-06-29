@@ -68,17 +68,19 @@
                     <h5 class="modal-title" id="staticBackdropLabel">Adicionar Unidades Federativas</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form id="modalAddUFForm">
+                <form id="modalAddUFForm" name="modalAddUFForm" method="post"
+                action="{{ url('unidadesFederativas') }}">
+                    @csrf
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="siglaUFAdd" class="form-label">Sigla da Unidade Federativa</label>
                             <label class="d-none validation"> </label>
-                            <input type="text" maxlength="2" class="form-control" id="siglaUFAdd" requiredData="requiredData">
+                            <input type="text" maxlength="2" class="form-control" id="siglaUFAdd" name="siglaUFAdd" requiredData="requiredData">
                         </div>
                         <div class="mb-3">
                             <label for="nomeUFAdd" class="form-label">Nome</label>
                             <label class="d-none validation"> </label>
-                            <input type="text" class="form-control" id="nomeUFAdd" requiredData="requiredData">
+                            <input type="text" class="form-control" id="nomeUFAdd" name="nomeUFAdd" requiredData="requiredData">
                         </div>
                     </div>
                     <div class="modal-footer">
