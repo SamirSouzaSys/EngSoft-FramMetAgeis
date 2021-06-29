@@ -13,7 +13,7 @@ class CreateModelUnidadeFederativasTable extends Migration
      */
     public function up()
     {
-        Schema::create('unidade_federativa', function (Blueprint $table) {
+        Schema::create('unidadeFederativa', function (Blueprint $table) {
             // $table->id();
             // $table->timestamps();
             $table->string('SGL_UNIDADE_FEDERATIVA',2)->primary();
@@ -30,6 +30,6 @@ class CreateModelUnidadeFederativasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('unidade_federativas');
+        Schema::dropIfExists('unidadeFederativa');
     }
 }

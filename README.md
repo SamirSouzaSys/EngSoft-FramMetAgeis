@@ -76,6 +76,8 @@ php artisan make:model ModelUnidadeFederativa -m
 
 php artisan migrate
 
+dd // VarDump do Laravel
+
 ================================================================================================
 
 *README FROM Laravel*

@@ -1,11 +1,11 @@
 @extends('templates.template')
 
 @section('tituloHtml')
-    Small Site - Unidades Federativas
+    Small Site - Unidade Federativa
 @endsection
 
 @section('tituloPaginaInterno')
-    Unidades Federativas
+    Unidade Federativa
 @endsection
 
 @section('content')
@@ -16,17 +16,12 @@
             <th scope="col">Sigla</th>
             <th scope="col">Nome</th>
             <th scope="col">Qtd Municípios</th>
-            <th scope="col">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAddUF">
-                <i class="fas fa-plus-circle"></i>
-                </button>
-            </th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($unidadesFederativas as $unidadeFederativa)
                 @php
-                    $municipios = count($unidadeFederativa->find($unidadeFederativa->SGL_UNIDADE_FEDERATIVA)->relMunicipios);
+                    $municipios = $unidadeFederativa->find($unidadeFederativa->SGL_UNIDADE_FEDERATIVA)->relMunicipios;
+                    $qtdMunicipios = count($municipios);
                 @endphp
 
                 <tr>
@@ -38,24 +33,41 @@
                     </td>
                     </th>
                     <td>
-                        {{ $municipios }}
-                    </td>
-                    <td class="coluna-buttons">
-                        <button onclick="location.href='{{ url("unidadesFederativas/$unidadeFederativa->SGL_UNIDADE_FEDERATIVA") }}'" type="button" class="btn btn-primary text-nowrap" data-bs-toggle="modal" data-bs-target="">
-                            <i class="fas fa-book "></i>
-                        </button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
-                        <i class="fas fa-pen-square me-1"></i>
-                        </button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
-                        <i class="fas fa-times-circle"></i>
-                        </button>  
+                        {{ $qtdMunicipios }}
                     </td>
                 </tr>
-            @endforeach
             
         </tbody>
         </table>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <table class="table caption-top">
+            <thead>
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Número da População</th>
+                    <th scope="col">Nome do Prefeito</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($municipios as $municipio)
+        
+                    <tr>
+                        {{-- scope="row" --}}
+                        <td>{{ $municipio->COD_MUNICIPIO }}</td>
+                        <td>{{ $municipio->NOM_MUNICIPIO }}</td>
+                        <td>{{ $municipio->NUM_POPULACAO }}</td>
+                        <td>{{ $municipio->NOM_PREFEITO }}</td>
+        
+                        {{-- <td><button onclick="location.href='{{ url('completed') }}'">
+                            Check Stock</button></td> --}}                        
+                    </tr>
+                @endforeach
+            </tbody>
+            </table>
     </div>
 @endsection
 

@@ -4,8 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\ModelMunicipio;
+use App\Models\ModelUnidadeFederativa;
+
 class MunicipiosController extends Controller
 {
+
+    private $objUnidadeFederativa;
+    private $objMunicipio;
+
+    public function __construct(){
+        $this->objUnidadeFederativa = new ModelUnidadeFederativa();
+        $this->objMunicipio = new ModelMunicipio();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +25,16 @@ class MunicipiosController extends Controller
      */
     public function index()
     {
-        return view('municipios');
+        // dd($this->objUnidadeFederativa->all());
+        // dd($this->objUnidadeFederativa->find('MA')->relMunicipios);
+
+        // dd($this->objMunicipio->all());
+        // dd($this->objMunicipio->find(1)->relUnidadeFederativa);
+        
+        // $municipios = $this->objMunicipio->all()->sortBy('NUM_POPULACAO');
+        // $municipios = $this->objMunicipio->all()->sortByDesc('NUM_POPULACAO');
+        $municipios = $this->objMunicipio->all()->take(30);
+        return view('municipios', compact('municipios'));
     }
 
     /**
@@ -45,7 +66,9 @@ class MunicipiosController extends Controller
      */
     public function show($id)
     {
-        //
+        // echo $id;
+        $municipio = $this->objMunicipio->find($id);
+        return view('municipio', compact('municipio'));
     }
 
     /**

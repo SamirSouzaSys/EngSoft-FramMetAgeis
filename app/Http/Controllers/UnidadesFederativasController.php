@@ -4,8 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\ModelUnidadeFederativa;
+
+
 class UnidadesFederativasController extends Controller
 {
+
+    private $objUnidadeFederativa;
+
+    public function __construct(){
+        $this->objUnidadeFederativa = new ModelUnidadeFederativa();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +23,14 @@ class UnidadesFederativasController extends Controller
      */
     public function index()
     {
-        return view('unidadesFederativas');
+        
+        // dd($this->objUnidadeFederativa->find()->all());
+        // dd($this->objUnidadeFederativa->all());
+        $unidadesFederativas = $this->objUnidadeFederativa->all();
+        
+        return view('unidadesFederativas',compact('unidadesFederativas'));
+        
+        // return view('unidadesFederativas');
     }
 
     /**
@@ -45,7 +62,11 @@ class UnidadesFederativasController extends Controller
      */
     public function show($id)
     {
-        //
+        // dd($this->objUnidadeFederativa->find()->all());
+        // dd($this->objUnidadeFederativa->all());
+        $unidadeFederativa = $this->objUnidadeFederativa->find($id);
+        
+        return view('unidadeFederativa',compact('unidadeFederativa'));
     }
 
     /**

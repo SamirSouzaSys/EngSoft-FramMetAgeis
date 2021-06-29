@@ -19,7 +19,7 @@ class CreateModelMunicipiosTable extends Migration
             $table->integer('NUM_POPULACAO')->nullable();
             $table->string('NOM_PREFEITO',100)->nullable();
             $table->string('SGL_UNIDADE_FEDERATIVA',2);
-            $table->foreign('SGL_UNIDADE_FEDERATIVA')->references('SGL_UNIDADE_FEDERATIVA')->on('unidade_federativa');
+            $table->foreign('SGL_UNIDADE_FEDERATIVA')->references('SGL_UNIDADE_FEDERATIVA')->on('unidadeFederativa');
             
         });
     }

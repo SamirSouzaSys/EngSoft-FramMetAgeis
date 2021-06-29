@@ -20,9 +20,12 @@ Route::get('/', function () {
 });
 
 // Route::get('/user', [UserController::class, 'index']);
-Route::get('/municipios',[MunicipiosController::class, 'index']);
+
+Route::get('/municipios',     [MunicipiosController::class, 'index']);
+Route::resource('/municipios', MunicipiosController::class);
 
 Route::get('/unidadesFederativas',[UnidadesFederativasController::class, 'index']);
+Route::resource('/unidadesFederativas', UnidadesFederativasController::class);
 
 //Chamar Função - Exemplo
 // Route::get('/municipios', 'NomeController@MetodoDoController');
