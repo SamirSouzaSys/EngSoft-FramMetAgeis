@@ -94,7 +94,17 @@ class MunicipiosController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+        $municipioEdit = $this->objMunicipio->find($id);
+        $unidadeFederativaEdit = $this->objUnidadeFederativa->find($municipioEdit->SGL_UNIDADE_FEDERATIVA);
+        $showEditModal = true;
+
+        $municipios = $this->objMunicipio->all()->take(30);
+        $unidadesFederativas = $this->objUnidadeFederativa->all();
+
+        return view('municipios',
+            compact('municipios','unidadesFederativas',
+            'municipioEdit','unidadeFederativaEdit','showEditModal'));
     }
 
     /**

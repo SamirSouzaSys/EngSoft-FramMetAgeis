@@ -18,6 +18,12 @@ $(document).ready(function() {
     function() {
       return validateForm("#modalEditUFForm");
   });
+
+  if( $("#_showEditModal").attr("show") == true ){
+    $("#modalEditMun").modal('show');
+  }
+  
+  
 });
 
 

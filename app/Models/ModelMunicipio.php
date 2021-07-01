@@ -14,7 +14,7 @@ class ModelMunicipio extends Model
     // public $incrementing = true;
 
     protected $fillable = [
-        'COD_MUNICIPIO',
+        // 'COD_MUNICIPIO',
         'NOM_MUNICIPIO',
         'NUM_POPULACAO',
         'NOM_PREFEITO',
