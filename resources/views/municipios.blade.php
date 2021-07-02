@@ -130,6 +130,8 @@
   </div>
   
   <!-- Modal Edit Form-->
+  @isset($municipioEdit)
+    
   <div class="modal fade" id="modalEditMun" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalEditLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -138,56 +140,56 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form id="modalEditMunForm" name="modalEditMunForm" method="POST"
-        @isset($municipioEdit)
           action="{{ url("municipios/$municipioEdit->COD_MUNICIPIO") }}"
-        @endisset
         >
-          @method('PUT')
-          <div class="modal-body">
-            {{-- <div class="mb-3">
-              <label for="codigoMunEdit" class="form-label">Alterar/Modificar o Código</label>
-              <label class="d-none validation"> </label>
-              <input type="number" class="form-control" id="codigoMunEdit" requiredData="requiredData">
-            </div> --}}
-            <div class="mb-3">
+        @csrf
+        @method('PUT')
+        <div class="modal-body">
+          {{-- <div class="mb-3">
+            <label for="codigoMunEdit" class="form-label">Alterar/Modificar o Código</label>
+            <label class="d-none validation"> </label>
+            <input type="number" class="form-control" id="codigoMunEdit" requiredData="requiredData">
+          </div> --}}
+          <div class="mb-3">
               <label for="nomeMunEdit" class="form-label">Alterar/Modificar o Nome</label>
               <label class="d-none validation"> </label>
-              <input type="text" class="form-control" id="nomeMunEdit" name="nomeMunEdit" requiredData="requiredData" value="{{ $municipioEdit->NOM_MUNICIPIO ?? '' }}">
+              <input type="text" class="form-control" id="nomeMunEdit" name="nomeMunEdit" requiredData="requiredData" value="{{ $municipioEdit->NOM_MUNICIPIO}}">
             </div>
             <div class="mb-3">
               <label for="numeroPopMunEdit" class="form-label">Alterar/Modificar o Número da população</label>
               <label class="d-none validation"> </label>
-              <input type="number" class="form-control" id="numeroPopMunEdit" name="numeroPopMunEdit" value="{{ $municipioEdit->NUM_POPULACAO ?? ''}}">
+              <input type="number" class="form-control" id="numeroPopMunEdit" name="numeroPopMunEdit" value="{{ $municipioEdit->NUM_POPULACAO}}">
             </div>
             <div class="mb-3">
               <label for="nomePrefeitoMunEdit" class="form-label">Alterar/Modificar o Nome do Prefeito</label>
               <label class="d-none validation"> </label>
-              <input type="text" class="form-control" id="nomePrefeitoMunEdit" name="nomePrefeitoMunEdit" value="{{ $municipioEdit->NOM_PREFEITO ?? ''}}">
+              <input type="text" class="form-control" id="nomePrefeitoMunEdit" name="nomePrefeitoMunEdit" value="{{ $municipioEdit->NOM_PREFEITO}}">
             </div>
             <div class="mb-3">
               <label for="siglaUfMunEdit" class="form-label">Alterar/Modificar a Sigla da Unidade Federativa</label>
               <label class="d-none validation"> </label>
               <select class="form-select" aria-label="Default select example"
               id="siglaUfMunEdit" name="siglaUfMunEdit">
-              @isset($unidadeFederativaEdit)
-                
-                @foreach ($unidadesFederativas as $unidadeFederativa)
-                  <option
-                    @if(
-                      $unidadeFederativa->SGL_UNIDADE_FEDERATIVA == $unidadeFederativaEdit->SGL_UNIDADE_FEDERATIVA
-                      )
-                      selected
-                    @endif
-                      >
-                      {{ $unidadeFederativa->NOM_UNIDADE_FEDERATIVA ?? '' }} -
-                      {{ $unidadeFederativa->SGL_UNIDADE_FEDERATIVA ?? '' }}
-                  </option>
-                @endforeach
-              @endisset
+                @isset($unidadeFederativaEdit)
+                  @foreach ($unidadesFederativas as $unidadeFederativa)
+                    <option
+                      @if(
+                        $unidadeFederativa->SGL_UNIDADE_FEDERATIVA ==
+                        $unidadeFederativaEdit->SGL_UNIDADE_FEDERATIVA
+                        )
+                      selected value="{{ $unidadeFederativaEdit->SGL_UNIDADE_FEDERATIVA }}"
+                      @endif
+                          >
+                          {{ $unidadeFederativa->NOM_UNIDADE_FEDERATIVA}} -
+                          {{ $unidadeFederativa->SGL_UNIDADE_FEDERATIVA}}
+                    </option>
+                  @endforeach
+                @endisset
               </select>
-              {{-- <input type="text" maxlength="2" class="form-control" id="siglaUfMunEdit" requiredData="requiredData"> --}}
-            </div>
-            <div class="modal-footer">
+
+                  {{-- <input type="text" maxlength="2" class="form-control" id="siglaUfMunEdit" requiredData="requiredData"> --}}
+                </div>
+                <div class="modal-footer">
               <!-- data-bs-dismiss="modal" -->
               <input type="submit" class="btn btn-primary" form="modalEditMunForm" value="Confirmar Edição">
               <!-- <button type="submit" class="btn btn-primary" >Alterar/Modificar</button> -->
@@ -197,7 +199,8 @@
       </div>
     </div>
   </div>
-
+  @endisset
+  
   <!-- Modal Delete Form-->
   <div class="modal fade" id="modalDeleteMun" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalDeleteLabel" aria-hidden="true">
     <div class="modal-dialog">

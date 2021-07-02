@@ -114,9 +114,17 @@ class MunicipiosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    // public function update(Request $request, $id)
     public function update(Request $request, $id)
     {
-        //
+        $this->objMunicipio->where(['COD_MUNICIPIO'=>$id])->update([
+            // 'COD_MUNICIPIO'          => $request->codigoMunAdd,
+            'NOM_MUNICIPIO'          => $request->nomeMunEdit,
+            'NUM_POPULACAO'          => $request->numeroPopMunEdit,
+            'NOM_PREFEITO'           => $request->nomePrefeitoMunEdit,
+            'SGL_UNIDADE_FEDERATIVA' => $request->siglaUfMunEdit
+        ]);
+        return redirect('municipios');
     }
 
     /**

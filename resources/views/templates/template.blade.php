@@ -44,14 +44,14 @@
 
       <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
         <a class="me-3 py-2 text-dark text-decoration-none" href="{{ url("municipios") }}">
-          @if( Request::is("municipios") )
+          @if( Request::is("municipios*") )
             <strong>Municípios</strong>
           @else
             Municípios
           @endif
         </a>
         <a class="py-2 text-dark text-decoration-none" href="{{ url("unidadesFederativas") }}">
-          @if( Request::is("unidadesFederativas") )
+          @if( Request::is("unidadesFederativas*") )
             <strong>Unidades Federativas</strong>
             @else
             Unidades Federativas
