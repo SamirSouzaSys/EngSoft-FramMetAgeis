@@ -25,7 +25,7 @@ class CreateModelMunicipiosTable extends Migration
             
             // $table->increments('COD_MUNICIPIO')->change();
 
-            $table->foreign('SGL_UNIDADE_FEDERATIVA')->references('SGL_UNIDADE_FEDERATIVA')->on('unidadeFederativa');
+            $table->foreign('SGL_UNIDADE_FEDERATIVA')->references('SGL_UNIDADE_FEDERATIVA')->on('unidadeFederativa')->onUpdate('cascade');
         });
     }
 

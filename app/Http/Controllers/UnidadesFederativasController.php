@@ -84,7 +84,12 @@ class UnidadesFederativasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $unidadesFederativas = $this->objUnidadeFederativa->all();
+
+        $unidadeFederativaEdit = $this->objUnidadeFederativa->find($id);
+        $showEditModal = true;
+
+        return view('unidadesFederativas',compact('unidadesFederativas','unidadeFederativaEdit','showEditModal'));
     }
 
     /**
@@ -96,7 +101,11 @@ class UnidadesFederativasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->objUnidadeFederativa->where(['SGL_UNIDADE_FEDERATIVA'=>$id])->update([
+            'SGL_UNIDADE_FEDERATIVA' => $request->siglaUFEdit,
+            'NOM_UNIDADE_FEDERATIVA' => $request->nomeUFEdit
+        ]);
+        return redirect('unidadesFederativas');
     }
 
     /**

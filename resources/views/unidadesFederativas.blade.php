@@ -44,7 +44,9 @@
                         <button onclick="location.href='{{ url("unidadesFederativas/$unidadeFederativa->SGL_UNIDADE_FEDERATIVA") }}'" type="button" class="btn btn-primary text-nowrap" data-bs-toggle="modal" data-bs-target="">
                             <i class="fas fa-book "></i>
                         </button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
+                        <button
+                        onclick="location.href='{{ url("unidadesFederativas/$unidadeFederativa->SGL_UNIDADE_FEDERATIVA/edit") }}'"
+                        type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUF">
                         <i class="fas fa-pen-square me-1"></i>
                         </button>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteUF">
@@ -93,34 +95,43 @@
     </div>
   
     <!-- Modal Edit Form-->
+@isset($unidadeFederativaEdit)
+
     <div class="modal fade" id="modalEditUF" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalEditUfLabel" aria-hidden="true">
         <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">Alterar/Modificar os dados da Unidade Federativa</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form id="modalEditUFForm">
-            <div class="modal-body">
-                <div class="mb-3">
-                <label for="siglaUFEdit" class="form-label">Alterar/Modificar a Sigla da Unidade Federativa</label>
-                <label class="d-none validation"> </label>
-                <input type="text" maxlength="2" class="form-control" id="siglaUFEdit" requiredData="requiredData">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Alterar/Modificar os dados da Unidade Federativa</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="mb-3">
-                <label for="nomeUFEdit" class="form-label">Alterar/Modificar o Nome da Unidade Federativa</label>
-                <label class="d-none validation"> </label>
-                <input type="text" class="form-control" id="nomeUFEdit" requiredData="requiredData">
-                </div>
+                <form id="modalEditUFForm" name="modalEditUFForm" method="POST"
+                action="{{ url("unidadesFederativas/$unidadeFederativaEdit->SGL_UNIDADE_FEDERATIVA") }}">
+                    @csrf
+                    @method('PUT')
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="siglaUFEdit" class="form-label">Alterar/Modificar a Sigla da Unidade Federativa</label>
+                            <label class="d-none validation"> </label>
+                            <input type="text" maxlength="2" class="form-control" id="siglaUFEdit" name="siglaUFEdit" requiredData="requiredData" value="{{ $unidadeFederativaEdit-> SGL_UNIDADE_FEDERATIVA }}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="nomeUFEdit" class="form-label">Alterar/Modificar o Nome da Unidade Federativa</label>
+                            <label class="d-none validation"> </label>
+                            <input type="text" class="form-control" id="nomeUFEdit" name="nomeUFEdit" requiredData="requiredData"
+                            value="{{ $unidadeFederativaEdit-> NOM_UNIDADE_FEDERATIVA}}">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Alterar/Modificar</button>
+                        <!-- data-bs-dismiss="modal" -->
+                    </div>
+                </form>
             </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Alterar/Modificar</button>
-                <!-- data-bs-dismiss="modal" -->
-            </div>
-            </form>
-        </div>
         </div>
     </div>
+
+@endisset
+
 
     <!-- Modal Delete Form-->
     <div class="modal fade" id="modalDeleteUF" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalDeleteFormLabel" aria-hidden="true">
@@ -146,4 +157,12 @@
         </div>
         </div>
     </div>
+
+    <input type="hidden" name="_showEditModal" show="
+    @isset($showEditModal)
+      {{ $showEditModal }}
+    @endisset
+    " id='_showEditModal'>
+  
+
 @endsection

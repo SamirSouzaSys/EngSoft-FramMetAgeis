@@ -21,8 +21,8 @@ $(document).ready(function() {
 
   if( $("#_showEditModal").attr("show") == true ){
     $("#modalEditMun").modal('show');
-  }
-  
+    $("#modalEditUF").modal('show');
+  }  
   
 });
 
